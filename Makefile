@@ -44,6 +44,7 @@ dependencies:
 
 .PHONY: build
 build:
+	@go build -buildmode c-shared -o libsz_cgo_encrypt_plugin.so main.go user-customization.go
 
 # -----------------------------------------------------------------------------
 # Test
@@ -64,9 +65,10 @@ run:
 # -----------------------------------------------------------------------------
 
 .PHONY: clean
-clean: clean-osarch-specific
+clean:
 	@go clean -cache
 	@go clean -testcache
+	@rm libsz_cgo_encrypt_plugin.so libsz_cgo_encrypt_plugin.h || true
 
 
 .PHONY: help
