@@ -30,6 +30,7 @@ type CustomEncryption struct {
 
 func findErrorCode(errorString string) int {
 	var result int = 0
+	// TODO:
 	return result
 
 }
